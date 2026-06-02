@@ -1,0 +1,113 @@
+:root{
+    --primary-color:#31487A;
+}
+
+body{
+    background:#F4F6F9;
+    margin:0;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.d-flex{
+    min-height:100vh;
+}
+
+.sidebar{
+    width:220px;
+    min-height:100vh;
+    background:#31487A;
+    display:flex;
+    flex-direction:column;
+    flex-shrink:0;
+}
+
+.system-title{
+    font-weight:700;
+    line-height:1.4;
+}
+
+.sidebar-divider{
+    border-color:rgba(255,255,255,.2);
+}
+
+.nav-link{
+    padding:12px 15px;
+    margin-bottom:8px;
+    border-radius:10px;
+    transition:.3s;
+}
+
+.nav-link:hover{
+    background:rgba(255,255,255,.15);
+}
+
+.active-link{
+    background:rgba(255,255,255,.15);
+}
+
+.logout-section{
+    margin-top:auto;
+}
+
+.main-content{
+    flex:1;
+    padding:30px;
+    overflow-x:auto;
+}
+
+.page-title{
+    font-weight:700;
+    margin-bottom:5px;
+}
+
+.text-primary-custom{
+    color:#31487A;
+}
+
+.dashboard-card{
+    border:none;
+    border-radius:15px;
+    transition:.3s;
+}
+
+.dashboard-card:hover{
+    transform:translateY(-3px);
+}
+
+.card-label{
+    color:#6c757d;
+}
+
+.card-number{
+    color:#31487A;
+    font-weight:700;
+    margin-top:10px;
+}
+
+.card{
+    border:none;
+    border-radius:15px;
+}
+
+.btn-custom{
+    background:#31487A;
+    color:white;
+    border:none;
+}
+
+.btn-custom:hover{
+    background:#26385f;
+    color:white;
+}
+
+.table th{
+    font-weight:600;
+}
+
+.badge{
+    font-size:.85rem;
+}
+
+.toast{
+    min-width:280px;
+}
