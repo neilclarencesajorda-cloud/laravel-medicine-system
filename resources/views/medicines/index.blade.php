@@ -35,7 +35,7 @@
     </div>
 
     @if(session('message'))
-        <div id="liveToast" style="position:fixed; top:20px; right:20px; z-index:9999; background:{{ session('type') == 'success' ? '#198754' : '#dc3545' }}; color:white; padding:12px 20px; border-radius:8px; box-shadow:0 4px 12px rgba(0,0,0,0.2); font-size:14px;">
+        <div id="liveToast" style="position:fixed; bottom:20px; right:20px; z-index:9999; background:{{ session('type') == 'success' ? '#198754' : '#dc3545' }}; color:white; padding:12px 20px; border-radius:8px; box-shadow:0 4px 12px rgba(0,0,0,0.2); font-size:14px;">
             {{ session('message') }}
         </div>
     @endif
