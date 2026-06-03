@@ -35,31 +35,14 @@
     </div>
 
     @if(session('message'))
-
-        <div class="position-fixed top-0 end-0 p-3" style="z-index:9999;">
-
-            <div id="liveToast"
-                class="toast show text-white border-0 shadow rounded-3
-                bg-{{ session('type') }}"
-                style="min-width:250px; max-width:300px; width:300px;">
-
+        <div style="position:fixed; top:20px; right:20px; z-index:9999; width:300px;">
+            <div id="liveToast" class="toast show text-white border-0 shadow rounded-3 bg-{{ session('type') }}" style="width:300px;">
                 <div class="d-flex">
-
-                    <div class="toast-body">
-                        {{ session('message') }}
-                    </div>
-
-                    <button type="button"
-                            class="btn-close btn-close-white me-2 m-auto"
-                            data-bs-dismiss="toast">
-                    </button>
-
+                    <div class="toast-body">{{ session('message') }}</div>
+                    <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
                 </div>
-
             </div>
-
         </div>
-
     @endif
 
     <div class="card shadow-sm">
