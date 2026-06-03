@@ -15,10 +15,10 @@
     <div class="card shadow-sm border-0 mb-4">
         <div class="card-body">
             <h5 class="fw-bold text-primary-custom">
-                Welcome to Medicine Management System
+                Welcome to Butika System
             </h5>
             <p class="mb-0 text-muted">
-                Manage medicine records, monitor stock levels, and track expiration dates efficiently.
+                Manage medicine records, monitor stock levels, and track expiration dates.
             </p>
         </div>
     </div>
