@@ -19,7 +19,7 @@
 
             <div class="card shadow">
 
-                <div class="card-header bg-primary text-white text-center">
+                <div class="card-header custom-blue text-white text-center">
                     <h3>Create Account</h3>
                 </div>
 
