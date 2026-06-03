@@ -113,3 +113,8 @@ body{
     max-width: 350px;
     font-size: 0.875rem;
 }
+
+.custom-blue {
+    background-color: #31487A;
+    color: white;
+}

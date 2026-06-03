@@ -130,21 +130,15 @@
 @endsection
 
 @section('scripts')
-
     <script>
     document.addEventListener('DOMContentLoaded', function () {
 
         const toastEl = document.getElementById('liveToast');
-
+        
         if (toastEl) {
-
             setTimeout(() => {
-
-                const toast = bootstrap.Toast.getOrCreateInstance(toastEl);
-                toast.hide();
-
-            }, 4000);
-
+                toastEl.style.display = 'none';
+            }, 3000);
         }
 
     });
