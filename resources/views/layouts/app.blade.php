@@ -16,7 +16,7 @@
     <!-- Mobile Navbar -->
     <nav class="navbar navbar-dark d-md-none px-3" style="background:#31487A;">
         <a class="navbar-brand d-flex align-items-center gap-2" href="/dashboard">
-            <img src="{{ asset('images/logo.jpg') }}" style="width:35px; height:35px; object-fit:contain;">
+            <img src="{{ asset('images/logo.jpg') }}" style="width:35px; height:35px; object-fit:contain; border-radius:50%;">
             <span style="font-size:14px;">Medicine System</span>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mobileSidebar">
@@ -53,11 +53,11 @@
             <div class="text-center mb-3">
                 <img src="{{ asset('images/logo.jpg') }}"
                      alt="Logo"
-                     style="width:80px; height:80px; object-fit:contain;">
+                     style="width:80px; height:80px; object-fit:contain; border-radius:50%;">
             </div>
 
             <h4 class="system-title text-center">
-                Medicine Management System
+                Butika
             </h4>
 
             <hr class="sidebar-divider">
