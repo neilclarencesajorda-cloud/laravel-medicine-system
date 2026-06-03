@@ -108,6 +108,8 @@ body{
     font-size:.85rem;
 }
 
-.toast{
-    min-width:280px;
+.toast {
+    min-width: 280px;
+    max-width: 350px;
+    font-size: 0.875rem;
 }
