@@ -36,7 +36,7 @@
 
     @if(session('message'))
 
-        <div class="position-fixed bottom-0 end-0 p-3">
+        <div class="position-fixed top-0 end-0 p-3" style="z-index:9999; width:auto;">
 
             <div id="liveToast"
                 class="toast show text-white border-0 shadow rounded-3
