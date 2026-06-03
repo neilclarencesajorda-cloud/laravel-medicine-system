@@ -36,7 +36,7 @@
                         </div>
                     @endif
 
-                    @if(session('message'))
+                    @if(session('success'))
                         <div id="liveToast" style="position:fixed; top:20px; right:20px; z-index:9999; background:#198754; color:white; padding:12px 20px; border-radius:8px; box-shadow:0 4px 12px rgba(0,0,0,0.2); font-size:14px;">
                             {{ session('message') }}
                             <script>setTimeout(()=>document.getElementById('liveToast').style.display='none',3000)</script>
