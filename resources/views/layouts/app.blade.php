@@ -95,7 +95,7 @@
 
         </div>
 
-        <div class="main-content flex-grow-1" style="min-width:0; overflow-x:auto;">x`
+        <div class="main-content flex-grow-1" style="min-width:0; overflow-x:auto;">
             @yield('content')
         </div>
 
