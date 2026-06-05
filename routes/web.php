@@ -58,5 +58,8 @@ Route::middleware('auth')->group(function () {
     Route::post('/profile/update', [ProfileController::class, 'update']);
 
     Route::get('/users', [UserController::class, 'index']);
+    Route::post('/users/store', [UserController::class, 'store']);
+    Route::post('/users/update/{id}', [UserController::class, 'update']);
+    Route::get('/users/delete/{id}', [UserController::class, 'destroy']);
 
 });
