@@ -66,6 +66,15 @@
                                     required>
                             </div>
 
+                            <div class="mb-3">
+                                <label class="form-label">Confirm Password</label>
+                                <input
+                                    type="password"
+                                    name="password_confirmation"
+                                    class="form-control"
+                                    required>
+                            </div>
+
                             <button type="submit" class="btn btn-custom w-100">
                                 Register
                             </button>
