@@ -5,6 +5,7 @@ use App\Models\Medicine;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\MedicineController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\UserController; 
 
 // Login and Registration
 Route::get('/', function () {
@@ -55,5 +56,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'index']);
 
     Route::post('/profile/update', [ProfileController::class, 'update']);
+
+    Route::get('/users', [UserController::class, 'index']);
 
 });

@@ -28,7 +28,9 @@
     <div id="mobileMenu" style="display:none; background:#31487A; padding:15px;">
         <a href="/dashboard" style="display:block; color:white; padding:10px; text-decoration:none;"><i class="bi bi-house-door me-2"></i>Dashboard</a>
         <a href="/medicines" style="display:block; color:white; padding:10px; text-decoration:none;"><i class="bi bi-capsule me-2"></i>Medicines</a>
+        <a href="/users" style="display:block; color:white; padding:10px; text-decoration:none;"><i class="bi bi-people me-2"></i>Users</a>
         <a href="/profile" style="display:block; color:white; padding:10px; text-decoration:none;"><i class="bi bi-person me-2"></i>Profile</a>
+        
         <form action="/logout" method="POST" style="padding:10px;">
             @csrf
             <button type="submit" class="btn btn-danger w-100">
@@ -64,6 +66,13 @@
                         <i class="bi bi-capsule me-2"></i>Medicines
                     </a>
                 </li>
+
+                <li class="nav-item">
+                    <a href="/users" class="nav-link text-white">
+                        <i class="bi bi-people me-2"></i>Users
+                    </a>
+                </li>
+
                 <li class="nav-item">
                     <a href="/profile" class="nav-link text-white">
                         <i class="bi bi-person me-2"></i>Profile
