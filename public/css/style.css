@@ -8,10 +8,10 @@ body{
     font-family:Arial, Helvetica, sans-serif;
 }
 
-.d-flex{
-    min-height:100vh;
+.d-flex {
+    min-height: 100vh;
+    flex-wrap: wrap;
 }
-
 .sidebar{
     width:220px;
     min-height:100vh;
@@ -29,6 +29,7 @@ body{
 .sidebar-divider {
     border-color: rgba(255, 255, 255, 0.6);
 }
+
 .nav-link{
     padding:12px 15px;
     margin-bottom:8px;
@@ -116,4 +117,11 @@ body{
 .custom-blue {
     background-color: #31487A;
     color: white;
+}
+
+@media (max-width: 768px) {
+    .main-content {
+        width: 100%;
+        padding: 15px;
+    }
 }
