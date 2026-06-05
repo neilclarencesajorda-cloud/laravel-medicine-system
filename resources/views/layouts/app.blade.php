@@ -13,44 +13,35 @@
     </head>
     <body>
 
-    <!-- Mobile Navbar -->
-    <nav class="navbar navbar-dark d-md-none px-3" style="background:#31487A; position:sticky; top:0; z-index:1050;">
-        <a class="navbar-brand d-flex align-items-center gap-2" href="/dashboard">
+    <!-- Mobile Navbar (hidden on desktop via CSS) -->
+    <nav id="mobileNav" style="background:#31487A; padding:10px 15px; display:none; align-items:center; justify-content:space-between;">
+        <a href="/dashboard" style="display:flex; align-items:center; gap:10px; text-decoration:none;">
             <img src="{{ asset('images/logo.jpg') }}" style="width:35px; height:35px; object-fit:cover; border-radius:50%;">
-            <span style="font-size:14px;">Medicine System</span>
+            <span style="color:white; font-size:14px;">Medicine System</span>
         </a>
-        <button onclick="toggleMenu()" class="navbar-toggler" type="button">
-            <span class="navbar-toggler-icon"></span>
+        <button onclick="toggleMenu()" style="background:transparent; border:1px solid rgba(255,255,255,0.5); color:white; padding:5px 10px; border-radius:5px; cursor:pointer;">
+            ☰
         </button>
     </nav>
 
     <!-- Mobile Menu -->
-    <div id="mobileMenu" style="display:none; background:#31487A; padding:15px; position:sticky; top:56px; z-index:1049;">
-        <ul class="nav flex-column">
-            <li class="nav-item">
-                <a href="/dashboard" class="nav-link text-white"><i class="bi bi-house-door me-2"></i>Dashboard</a>
-            </li>
-            <li class="nav-item">
-                <a href="/medicines" class="nav-link text-white"><i class="bi bi-capsule me-2"></i>Medicines</a>
-            </li>
-            <li class="nav-item">
-                <a href="/profile" class="nav-link text-white"><i class="bi bi-person me-2"></i>Profile</a>
-            </li>
-            <li class="nav-item mt-2">
-                <form action="/logout" method="POST">
-                    @csrf
-                    <button type="submit" class="btn btn-danger w-100">
-                        <i class="bi bi-box-arrow-right me-2"></i>Logout
-                    </button>
-                </form>
-            </li>
-        </ul>
+    <div id="mobileMenu" style="display:none; background:#31487A; padding:15px;">
+        <a href="/dashboard" style="display:block; color:white; padding:10px; text-decoration:none;"><i class="bi bi-house-door me-2"></i>Dashboard</a>
+        <a href="/medicines" style="display:block; color:white; padding:10px; text-decoration:none;"><i class="bi bi-capsule me-2"></i>Medicines</a>
+        <a href="/profile" style="display:block; color:white; padding:10px; text-decoration:none;"><i class="bi bi-person me-2"></i>Profile</a>
+        <form action="/logout" method="POST" style="padding:10px;">
+            @csrf
+            <button type="submit" class="btn btn-danger w-100">
+                <i class="bi bi-box-arrow-right me-2"></i>Logout
+            </button>
+        </form>
     </div>
 
-    <div class="d-flex">
+    <!-- Main Layout -->
+    <div style="display:flex; min-height:100vh;">
 
         <!-- Desktop Sidebar -->
-        <div class="sidebar text-white p-4 d-none d-md-flex flex-column">
+        <div id="desktopSidebar" class="text-white p-4" style="width:220px; min-width:220px; background:#31487A; display:flex; flex-direction:column; flex-shrink:0;">
 
             <div class="text-center mb-3">
                 <img src="{{ asset('images/logo.jpg') }}"
@@ -60,7 +51,7 @@
 
             <h4 class="system-title text-center">Butika</h4>
 
-            <hr class="sidebar-divider">
+            <hr style="border-color:rgba(255,255,255,0.6);">
 
             <ul class="nav flex-column">
                 <li class="nav-item">
@@ -80,7 +71,7 @@
                 </li>
             </ul>
 
-            <div class="mt-auto logout-section">
+            <div class="mt-auto">
                 <form action="/logout" method="POST">
                     @csrf
                     <button type="submit" class="btn btn-danger w-100">
@@ -92,7 +83,7 @@
         </div>
 
         <!-- Main Content -->
-        <div class="main-content flex-grow-1">
+        <div id="mainContent" style="flex:1; padding:30px; overflow-x:auto; min-width:0; background:#F4F6F9;">
             @yield('content')
         </div>
 
@@ -105,6 +96,27 @@
         const menu = document.getElementById('mobileMenu');
         menu.style.display = menu.style.display === 'none' ? 'block' : 'none';
     }
+
+    function handleResize() {
+        const sidebar = document.getElementById('desktopSidebar');
+        const mobileNav = document.getElementById('mobileNav');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mainContent = document.getElementById('mainContent');
+
+        if (window.innerWidth <= 767) {
+            sidebar.style.display = 'none';
+            mobileNav.style.display = 'flex';
+            mainContent.style.padding = '15px';
+        } else {
+            sidebar.style.display = 'flex';
+            mobileNav.style.display = 'none';
+            mobileMenu.style.display = 'none';
+            mainContent.style.padding = '30px';
+        }
+    }
+
+    window.addEventListener('resize', handleResize);
+    handleResize();
     </script>
 
     @yield('scripts')
