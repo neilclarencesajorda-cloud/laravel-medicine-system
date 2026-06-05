@@ -26,10 +26,9 @@ body{
     line-height:1.4;
 }
 
-.sidebar-divider{
-    border-color:rgba(255,255,255,.2);
+.sidebar-divider {
+    border-color: rgba(255, 255, 255, 0.6);
 }
-
 .nav-link{
     padding:12px 15px;
     margin-bottom:8px;
