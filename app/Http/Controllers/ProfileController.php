@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use App\Models\User;
 
 class ProfileController extends Controller
@@ -21,20 +22,12 @@ class ProfileController extends Controller
         ]);
 
         $user = User::find(Auth::id());
-
         $user->name = $request->name;
         $user->email = $request->email;
 
-        $user->save();
-
         if ($request->hasFile('profile_picture')) {
-
-            $imageName = time() . '.' .
-                        $request->profile_picture->extension();
-
-            $request->profile_picture
-                    ->move(public_path('profiles'), $imageName);
-
+            $imageName = time() . '.' . $request->profile_picture->extension();
+            $request->profile_picture->move(public_path('profiles'), $imageName);
             $user->profile_picture = $imageName;
         }
 
@@ -42,6 +35,25 @@ class ProfileController extends Controller
 
         return redirect('/profile')
             ->with('message', 'Profile updated successfully.')
+            ->with('type', 'success');
+    }
+
+    public function changePassword(Request $request)
+    {
+        $request->validate([
+            'new_password' => 'required|min:8|confirmed',
+        ]);
+
+        if (!Hash::check($request->current_password, Auth::user()->password)) {
+            return back()->withErrors(['current_password' => 'Current password is incorrect.']);
+        }
+
+        $user = User::find(Auth::id());
+        $user->password = Hash::make($request->new_password);
+        $user->save();
+
+        return redirect('/profile')
+            ->with('message', 'Password changed successfully.')
             ->with('type', 'success');
     }
 }

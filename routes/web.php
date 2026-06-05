@@ -57,6 +57,8 @@ Route::middleware('auth')->group(function () {
 
     Route::post('/profile/update', [ProfileController::class, 'update']);
 
+    Route::post('/profile/change-password', [ProfileController::class, 'changePassword']);
+
     Route::get('/users', [UserController::class, 'index']);
     Route::post('/users/store', [UserController::class, 'store']);
     Route::post('/users/update/{id}', [UserController::class, 'update']);
