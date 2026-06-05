@@ -59,20 +59,32 @@
 
                             <div class="mb-3">
                                 <label class="form-label">Password</label>
-                                <input
-                                    type="password"
-                                    name="password"
-                                    class="form-control"
-                                    required>
+                                <div class="input-group">
+                                    <input
+                                        type="password"
+                                        name="password"
+                                        id="password"
+                                        class="form-control"
+                                        required>
+                                    <button class="btn btn-outline-secondary" type="button" onclick="togglePassword('password', this)">
+                                        <i class="bi bi-eye"></i>
+                                    </button>
+                                </div>
                             </div>
 
                             <div class="mb-3">
                                 <label class="form-label">Confirm Password</label>
-                                <input
-                                    type="password"
-                                    name="password_confirmation"
-                                    class="form-control"
-                                    required>
+                                <div class="input-group">
+                                    <input
+                                        type="password"
+                                        name="password_confirmation"
+                                        id="password_confirmation"
+                                        class="form-control"
+                                        required>
+                                    <button class="btn btn-outline-secondary" type="button" onclick="togglePassword('password_confirmation', this)">
+                                        <i class="bi bi-eye"></i>
+                                    </button>
+                                </div>
                             </div>
 
                             <button type="submit" class="btn btn-custom w-100">
@@ -94,6 +106,18 @@
 
         </div>
     </div>
-
+    <script>
+        function togglePassword(fieldId, btn) {
+            const input = document.getElementById(fieldId);
+            const icon = btn.querySelector('i');
+            if (input.type === 'password') {
+                input.type = 'text';
+                icon.classList.replace('bi-eye', 'bi-eye-slash');
+            } else {
+                input.type = 'password';
+                icon.classList.replace('bi-eye-slash', 'bi-eye');
+            }
+        }
+    </script>
 </body>
 </html>
