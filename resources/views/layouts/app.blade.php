@@ -45,43 +45,37 @@
         </div>
     </nav>
 
-    <div class="d-flex">
+    <div class="d-flex" style="min-height:100vh;">
 
         <!-- Desktop Sidebar -->
-        <div class="sidebar text-white p-4 d-none d-md-flex flex-column">
+        <div class="sidebar text-white p-4 d-none d-md-flex flex-column" style="width:220px; min-width:220px;">
 
             <div class="text-center mb-3">
                 <img src="{{ asset('images/logo.jpg') }}"
-                     alt="Logo"
-                     style="width:80px; height:80px; object-fit:contain; border-radius:50%;">
+                    alt="Logo"
+                    style="width:80px; height:80px; object-fit:cover; border-radius:50%;">
             </div>
 
-            <h4 class="system-title text-center">
-                Butika
-            </h4>
+            <h4 class="system-title text-center">Butika</h4>
 
             <hr class="sidebar-divider">
 
             <ul class="nav flex-column">
-
                 <li class="nav-item">
                     <a href="/dashboard" class="nav-link text-white">
                         <i class="bi bi-house-door me-2"></i>Dashboard
                     </a>
                 </li>
-
                 <li class="nav-item">
                     <a href="/medicines" class="nav-link text-white">
                         <i class="bi bi-capsule me-2"></i>Medicines
                     </a>
                 </li>
-
                 <li class="nav-item">
                     <a href="/profile" class="nav-link text-white">
                         <i class="bi bi-person me-2"></i>Profile
                     </a>
                 </li>
-
             </ul>
 
             <div class="mt-auto logout-section">
@@ -95,7 +89,8 @@
 
         </div>
 
-        <div class="main-content flex-grow-1" style="min-width:0; overflow-x:auto;">
+        <!-- Main Content -->
+        <div class="flex-grow-1 p-3" style="min-width:0; overflow-x:auto;">
             @yield('content')
         </div>
 
