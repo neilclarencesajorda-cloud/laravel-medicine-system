@@ -3,7 +3,7 @@
 @section('content')
 <div class="container-fluid">
 
-    <div class="mb-4 d-flex justify-content-between align-items-center">
+    <div class="mb-3 d-flex justify-content-between align-items-center">
         <div>
             <h2 class="page-title">User Management</h2>
             <p class="text-muted">List of all registered users</p>
