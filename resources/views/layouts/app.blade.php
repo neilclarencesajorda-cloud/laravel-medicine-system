@@ -115,12 +115,12 @@
         if (window.innerWidth <= 767) {
             sidebar.style.display = 'none';
             mobileNav.style.display = 'flex';
-            mainContent.style.padding = '15px';
+            mainContent.style.padding = '10px';
         } else {
             sidebar.style.display = 'flex';
             mobileNav.style.display = 'none';
             mobileMenu.style.display = 'none';
-            mainContent.style.padding = '30px';
+            mainContent.style.padding = '20px';
         }
     }
 
