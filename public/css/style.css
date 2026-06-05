@@ -50,7 +50,7 @@ body{
 
 .main-content{
     flex:1;
-    padding:20px 30px;
+    padding:20px;
     overflow-x:auto;
     min-width:0;
 }
