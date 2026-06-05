@@ -125,12 +125,16 @@ body{
         display: none !important;
     }
 
-    .main-content {
-        width: 100%;
-        padding: 15px;
-    }
-
     .d-flex {
         flex-direction: column;
+    }
+
+    .main-content {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .table-responsive {
+        overflow-x: auto;
     }
 }
