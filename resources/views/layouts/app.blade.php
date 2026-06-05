@@ -14,16 +14,16 @@
     <body>
 
     <!-- Mobile Navbar -->
-    <nav class="navbar navbar-dark d-md-none px-3" style="background:#31487A;">
+    <nav class="navbar navbar-dark d-md-none px-3" style="background:#31487A; position:sticky; top:0; z-index:999;">
         <a class="navbar-brand d-flex align-items-center gap-2" href="/dashboard">
-            <img src="{{ asset('images/logo.jpg') }}" style="width:35px; height:35px; object-fit:contain; border-radius:50%;">
+            <img src="{{ asset('images/logo.jpg') }}" style="width:35px; height:35px; object-fit:cover; border-radius:50%;">
             <span style="font-size:14px;">Medicine System</span>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mobileSidebar">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="mobileSidebar">
-            <ul class="navbar-nav mt-2">
+            <ul class="navbar-nav mt-2 pb-2">
                 <li class="nav-item">
                     <a href="/dashboard" class="nav-link text-white"><i class="bi bi-house-door"></i> Dashboard</a>
                 </li>
@@ -33,7 +33,7 @@
                 <li class="nav-item">
                     <a href="/profile" class="nav-link text-white"><i class="bi bi-person"></i> Profile</a>
                 </li>
-                <li class="nav-item mt-2">
+                <li class="nav-item mt-2 mb-2">
                     <form action="/logout" method="POST">
                         @csrf
                         <button type="submit" class="btn btn-danger w-100">
@@ -95,7 +95,7 @@
 
         </div>
 
-        <div class="main-content flex-grow-1" style="min-width:0; overflow-x:auto;">
+        <div class="main-content flex-grow-1" style="min-width:0; overflow-x:auto;">x`
             @yield('content')
         </div>
 
