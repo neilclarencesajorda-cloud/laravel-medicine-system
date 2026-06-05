@@ -9,7 +9,7 @@ body{
 }
 
 .d-flex{
-    min-height:100vh;
+    min-height:0;
 }
 
 .sidebar{
