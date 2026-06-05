@@ -9,12 +9,16 @@
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 
 </head>
-<body class="bg-light">
+<body class="bg-light d-flex justify-content-center align-items-center" style="min-height:100vh;">
 
-    <div class="container d-flex justify-content-center align-items-center" style="min-height:100vh;">
+    <div class="container mt-5">
+
         <div class="row justify-content-center">
+
             <div class="col-md-5">
+
                 <div class="card shadow">
+
                     <div class="card-header custom-blue text-white text-center">
                         <h3>Create Account</h3>
                     </div>
@@ -76,7 +80,9 @@
                     </div>
 
                 </div>
+
             </div>
+
         </div>
     </div>
 
