@@ -69,6 +69,16 @@
                         @csrf
 
                         <div class="mb-3">
+                            <label class="form-label">Current Password</label>
+                            <div class="input-group">
+                                <input type="password" name="current_password" id="currentPassword" class="form-control" required>
+                                <button class="btn btn-outline-secondary" type="button" onclick="togglePassword('currentPassword', this)">
+                                    <i class="bi bi-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
                             <label class="form-label">New Password</label>
                             <div class="input-group">
                                 <input type="password" name="new_password" id="newPassword" class="form-control" required>
