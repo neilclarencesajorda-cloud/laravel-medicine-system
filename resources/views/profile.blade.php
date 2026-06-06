@@ -99,7 +99,10 @@
                         </div>
 
                         @if($errors->has('current_password'))
-                            <div class="alert alert-danger">{{ $errors->first('current_password') }}</div>
+                            <div id="errorToast" style="position:fixed; top:20px; right:20px; z-index:9999; background:#dc3545; color:white; padding:12px 20px; border-radius:8px; box-shadow:0 4px 12px rgba(0,0,0,0.2); font-size:14px; min-width:200px;">
+                                {{ $errors->first('current_password') }}
+                                <script>setTimeout(()=>document.getElementById('errorToast').style.display='none',3000)</script>
+                            </div>
                         @endif
 
                         <button type="submit" class="btn btn-custom w-100">

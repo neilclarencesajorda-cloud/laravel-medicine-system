@@ -10,15 +10,15 @@
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 
 </head>
-<body class="bg-light d-flex justify-content-center align-items-center" style="min-height:100vh;">
+<body style="min-height:100vh; display:flex; justify-content:center; align-items:center; background-image:url('{{ asset('images/bg.jpg') }}'); background-size:cover; background-position:center;">
 
-    <div class="container mt-5">
+    <div class="container">
 
         <div class="row justify-content-center">
 
             <div class="col-md-5">
 
-                <div class="card shadow">
+                <div class="card shadow" style="backdrop-filter:blur(10px); background:rgba(255,255,255,0.85);">
 
                     <div class="card-header custom-blue text-white text-center">
                         <h3>Create Account</h3>
